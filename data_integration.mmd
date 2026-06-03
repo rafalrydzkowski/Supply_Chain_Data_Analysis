@@ -21,10 +21,7 @@ erDiagram
         decimal product_price
         int category_id
         varchar category_name
-    }
-
-    dim_departments {
-        int department_id PK
+        int department_id
         varchar department_name
     }
 
@@ -43,7 +40,6 @@ erDiagram
         int order_id
         int customer_id FK
         int product_card_id FK
-        int department_id FK
         int order_geo_id FK
         timestamp order_date
         timestamp shipping_date
@@ -68,5 +64,4 @@ erDiagram
 
     dim_customers ||--o{ fact_order_items : "składa / FK"
     dim_products ||--o{ fact_order_items : "zawiera / FK"
-    dim_departments ||--o{ fact_order_items : "obsługuje / FK"
     dim_order_geography ||--o{ fact_order_items : "miejsce_wysyłki / FK"
