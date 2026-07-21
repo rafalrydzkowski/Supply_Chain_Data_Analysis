@@ -13,16 +13,15 @@
 This repository demonstrates an **end-to-end Data Engineering & Business Intelligence (BI) project** built on Microsoft Azure. The solution ingests raw transactional datasets from Azure Blob Storage, models them into a multi-layered Star Schema (Medallion Architecture), executes advanced T-SQL analytical workloads, and delivers interactive visual reports in Power BI.
 
 ### 🏗️ Architecture & Data Pipeline
-`Azure Blob Storage (Bronze)` ➔ `T-SQL BULK INSERT` ➔ `Azure SQL Database (Silver - Star Schema)` ➔ `T-SQL Analytics (Gold)` ➔ `Power BI Dashboard`
+`Azure Blob Storage (Bronze)` ➔ `T-SQL BULK INSERT` ➔ `Azure SQL Database (Silver - Star Schema)` ➔ `T-SQL Analytics` ➔ `Power BI Dashboard`
 
 ---
 
 ## 🛠️ Key Technical Highlights
 
-* **Cloud Data Ingestion:** Automated high-throughput ingestion from Azure Blob Storage into Azure SQL using SAS Token Credentials and `BULK INSERT` with `TABLOCK` optimizations.
+* **Cloud Data Ingestion:** Automated high-throughput ingestion from Azure Blob Storage into Azure SQL using SAS Token Credentials and `BULK INSERT`.
 * **Dimensional Modeling:** Architected a 3NF normalized-to-Star Schema data model featuring Fact (`fact_orders`) and Dimension tables (`dim_products`, `dim_customers`, `dim_hubs`, `dim_shipping_locations`).
-* **Performance Tuning & Indexing:** Implemented Nonclustered Indexes and SARGable date filtering to prevent full table scans and minimize I/O overhead on Azure SQL Database.
-* **Advanced T-SQL Analytics:** Solved complex business queries including **Gaps & Islands streak detection**, **Cohort Retention Analysis**, **RFM Customer Segmentation**, and **Top-N Product Performance** using CTEs and Window Functions (`ROW_NUMBER`, `DENSE_RANK`, `NTILE`, `SUM() OVER()`).
+* **Advanced T-SQL Analytics:** Solved complex business queries including **Gaps & Islands streak detection**, **Cohort Retention Analysis**, **RFM Customer Segmentation**, and **Top-N Product Performance** using CTEs and Window Functions (`ROW_NUMBER`, `RANK`, `SUM() OVER()`).
 * **Executive BI Dashboards:** Built DirectQuery/Import Power BI reporting layers focused on Logistics SLA breaches, revenue shares, and profitability margins.
 
 ---
@@ -32,7 +31,7 @@ This repository demonstrates an **end-to-end Data Engineering & Business Intelli
 | Layer | Technology |
 |---|---|
 | **Cloud Storage** | Azure Blob Storage (Container Landing Zone) |
-| **Database Engine** | Azure SQL Database (Serverless Tier) |
+| **Database Engine** | Azure SQL Database |
 | **Development Environment** | VS Code (macOS) with `mssql` & `Azure Account` extensions |
 | **Language & Queries** | T-SQL (DDL, DML, Window Functions, CTEs, Indexing) |
-| **Visualization** | Power BI Desktop & Service |
+| **Visualization** | Power BI Desktop |
