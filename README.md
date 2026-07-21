@@ -4,8 +4,6 @@
 [![Power BI](https://img.shields.io/badge/Power%20BI-Dashboards-F2C94C?logo=powerbi)](https://powerbi.microsoft.com/)
 [![T-SQL](https://img.shields.io/badge/T--SQL-Data%20Modeling-CC292B)](https://docs.microsoft.com/en-us/sql/t-sql/)
 
-> An enterprise-grade, cloud-native analytics solution transforming raw transactional supply chain data into high-performance analytical models and executive dashboards.
-
 ---
 
 ## 📌 Executive Summary
