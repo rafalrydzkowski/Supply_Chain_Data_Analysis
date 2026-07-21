@@ -41,9 +41,7 @@ This repository demonstrates an **end-to-end Data Engineering & Business Intelli
 Execute the T-SQL scripts in `SQL_scripts/` sequentially to build and populate the Medallion layers:
 
 ### 1. Bronze Layer Deployment (Raw Landing)
-1. **`1_bronze_ddl.sql`**: Provision staging tables in the `bronze` schema.
-2. **`1_bronze_load.sql`**: Configure database-scoped credentials, define the Azure Blob Storage external data source, and execute high-throughput `BULK INSERT` commands using `TABLOCK`.
-3. **`1_bronze_check.sql`**: Run raw data ingestion checks and record-count validations.
+**`1_bronze_ddl.sql`** -> **`1_bronze_load.sql`** -> **`1_bronze_check.sql`**
 
 ### 2. Silver Layer Deployment (Star Schema)
 1. **`2_silver_ddl.sql`**: Provision normalized Fact (`fact_orders`) and Dimension tables with Primary Key, Foreign Key constraints, and Nonclustered Indexes.
