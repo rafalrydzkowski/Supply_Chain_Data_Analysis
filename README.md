@@ -47,7 +47,7 @@ Execute the T-SQL scripts in `SQL_scripts/` sequentially to build and populate t
 **`2_silver_ddl.sql`** -> **`2_silver_load.sql`** -> **`2_silver_check.sql`**
 
 ### 3. Analytics Layer (Business Reporting)
-** Execute **`sql_scripts/business_questions.sql`** to run advanced analytical queries.
+Execute **`sql_scripts/business_questions.sql`** to run advanced analytical queries.
 
 ### 4. Power BI Dashboard Integration
 1. Open Power BI Desktop.
