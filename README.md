@@ -39,26 +39,27 @@ This repository demonstrates an **end-to-end Data Engineering & Business Intelli
 ---
 
 ## 🚦 Getting Started
-To initialize and populate the entire Data Warehouse, follow the execution order below:
 
-1. **Create Schemas & Database:** Run the script: [database_initialization.sql](./scripts/database_initialization.sql)
-2. **Create Tables:** Run scripts respectively:
-   - [1_bronze_ddl](./scripts/bronze/bronze_ddl.sql)
-   - [2_silver_ddl](./scripts/silver/silver_ddl.sql)
-   - [3_gold_ddl](./scripts/gold/gold_ddl.sql)
-4. **Create Stored Procedures:** Run scripts respectively:
-   - [1_bronze_data_load_procedure](./scripts/bronze/bronze_data_load_procedure.sql)
-   - [2_silver_data_load_procedure](./scripts/silver/silver_data_load_procedure.sql)
-   - [3_gold_data_load_procedure](./scripts/gold/gold_data_load_procedure.sql)
-5. **Load Raw Data:**
-   ```sql
-   CALL bronze.sp_load_bronze();
-6. **Transform to Silver:**
-   ```sql
-   CALL silver.sp_load_silver();
-7. **Finalize Gold Schema:**
-   ```sql
-   CALL gold.sp_load_gold();
+Execute the T-SQL scripts in `SQL_scripts/` sequentially to build and populate the Medallion layers:
+
+### 1. Bronze Layer Deployment (Raw Landing)
+1. **`1_bronze_ddl.sql`**: Provision staging tables in the `bronze` schema.
+2. **`1_bronze_load.sql`**: Configure database-scoped credentials, define the Azure Blob Storage external data source, and execute high-throughput `BULK INSERT` commands using `TABLOCK`.
+3. **`1_bronze_check.sql`**: Run raw data ingestion checks and record-count validations.
+
+### 2. Silver Layer Deployment (Star Schema)
+1. **`2_silver_ddl.sql`**: Provision normalized Fact (`fact_orders`) and Dimension tables with Primary Key, Foreign Key constraints, and Nonclustered Indexes.
+2. **`2_silver_load.sql`**: Execute ELT transformation logic to clean, cast, and load data from `bronze` to `silver`.
+3. **`2_silver_check.sql`**: Perform referential integrity checks and data quality tests.
+
+### 3. Analytics Layer (Business Reporting)
+* Execute **`sql_files/data_analysis/business_questions.sql`** to run advanced analytical queries (e.g., Cohort Retention, RFM Segmentation, SLA Breach Detection, Top-N Performance).
+
+### 4. Power BI Dashboard Integration
+1. Open Power BI Desktop.
+2. Connect to the Azure SQL Database instance using the **SQL Server Database** connector.
+3. Import the `silver` Star Schema tables or query views.
+4. Open the `.pbix` file located in the `/powerbi` directory to interact with the executive report.
 
 ---
 
