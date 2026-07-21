@@ -44,18 +44,16 @@ Execute the T-SQL scripts in `SQL_scripts/` sequentially to build and populate t
 **`1_bronze_ddl.sql`** -> **`1_bronze_load.sql`** -> **`1_bronze_check.sql`**
 
 ### 2. Silver Layer Deployment (Star Schema)
-1. **`2_silver_ddl.sql`**: Provision normalized Fact (`fact_orders`) and Dimension tables with Primary Key, Foreign Key constraints, and Nonclustered Indexes.
-2. **`2_silver_load.sql`**: Execute ELT transformation logic to clean, cast, and load data from `bronze` to `silver`.
-3. **`2_silver_check.sql`**: Perform referential integrity checks and data quality tests.
+**`2_silver_ddl.sql`** -> **`2_silver_load.sql`** -> **`2_silver_check.sql`**
 
 ### 3. Analytics Layer (Business Reporting)
-* Execute **`sql_files/data_analysis/business_questions.sql`** to run advanced analytical queries (e.g., Cohort Retention, RFM Segmentation, SLA Breach Detection, Top-N Performance).
+** Execute **`sql_scripts/business_questions.sql`** to run advanced analytical queries.
 
 ### 4. Power BI Dashboard Integration
 1. Open Power BI Desktop.
 2. Connect to the Azure SQL Database instance using the **SQL Server Database** connector.
 3. Import the `silver` Star Schema tables or query views.
-4. Open the `.pbix` file located in the `/powerbi` directory to interact with the executive report.
+4. Open the `.pbix` file located in the `/powerbi_dashboard` directory to interact with the executive report.
 
 ---
 
