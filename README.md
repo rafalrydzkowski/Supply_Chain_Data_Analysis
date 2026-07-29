@@ -37,11 +37,11 @@ This repository demonstrates an **end-to-end Data Engineering & Business Intelli
 ---
 
 ## 📺 Power BI Interactive Dashboard 
-### Overview
+### Page 1: **Overview**
 <img width="2082" height="1183" alt="image" src="https://github.com/user-attachments/assets/54099fbf-86b1-4012-a8fc-b1c172876e76" />
 <img width="2072" height="1178" alt="image" src="https://github.com/user-attachments/assets/7e386fb9-3a94-4284-be96-16b1e5650322" />
 <img width="2082" height="1186" alt="image" src="https://github.com/user-attachments/assets/6263b604-d931-4250-bd7f-a9ae69006818" />
-### Records
+### Page 2: **Records**
 <img width="2067" height="1173" alt="image" src="https://github.com/user-attachments/assets/df2572f7-84da-480f-9709-92c07e5f3c61" />
 
 ---
