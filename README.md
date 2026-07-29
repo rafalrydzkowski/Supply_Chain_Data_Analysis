@@ -20,7 +20,7 @@ This repository demonstrates an **end-to-end Data Engineering & Business Intelli
 * **Cloud Data Ingestion:** Automated high-throughput ingestion from Azure Blob Storage into Azure SQL using SAS Token Credentials and `BULK INSERT`.
 * **Dimensional Modeling:** Architected a 3NF normalized-to-Star Schema data model featuring Fact (`fact_orders`) and Dimension tables (`dim_products`, `dim_customers`, `dim_hubs`, `dim_shipping_locations`).
 * **Advanced T-SQL Analytics:** Solved complex business queries including **Gaps & Islands streak detection**, **Cohort Retention Analysis**, **RFM Customer Segmentation**, and **Top-N Product Performance** using CTEs and Window Functions (`ROW_NUMBER`, `RANK`, `SUM() OVER()`).
-* **Executive BI Dashboards:** Built DirectQuery/Import Power BI reporting layers focused on Logistics SLA breaches, revenue shares, and profitability margins.
+* **Executive BI Dashboards:** Built DirectQuery/Import Power BI reporting layers focused on business questions (Full interactivity: **parameters**, **dynamic titles**, **bookmarks**, **buttons**, **page navigation**)
 
 ---
 
